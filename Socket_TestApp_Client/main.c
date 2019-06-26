@@ -27,7 +27,7 @@ int main()
 		getchar();
 		return -1;
 	}
-
+	//sefklrukgkse
 	char serverResponse[MESSAGE_SIZE] = "-";
 	
 	while (getchar() != 'q')
