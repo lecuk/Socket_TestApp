@@ -20,11 +20,11 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{9b437e1e-d18b-4e76-beca-c33e88094689}</ProjectGuid>
+    <ProjectGuid>{f402bbff-3d15-4280-bdb4-2d3a7dabc2af}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Socket_TestApp</RootNamespace>
+    <RootNamespace>Socket_TestApp_Client</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
-    <ProjectName>Socket_TestApp_Server</ProjectName>
+    <ProjectName>Socket_TestApp_Client</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
