@@ -4,6 +4,8 @@
 
 #define DEFAULT_PORT 9002
 #define MESSAGE_SIZE 256
+#define STATUS_SUCCESS 0
+#define STATUS_FAILED -1
 
 int main()
 {
@@ -23,7 +25,7 @@ int main()
 	serverAddress.sin_addr.S_un.S_addr = INADDR_ANY;
 
 	int bindStatus = bind(serverSocket, (struct sockaddr *)&serverAddress, sizeof(serverAddress));
-	if (bindStatus == -1)
+	if (bindStatus == STATUS_FAILED)
 	{
 		printf("Failed to bind a server.\n");
 		getchar();
@@ -34,10 +36,10 @@ int main()
 	{
 		listen(serverSocket, 4);
 
-		int clientSocket = accept(serverSocket, NULL, NULL);
-		if (clientSocket != -1)
+		SOCKET clientSocket = accept(serverSocket, NULL, NULL);
+		if (clientSocket)
 		{
-			printf("Sent data to client: %i\n", clientSocket);
+			printf("Sent data to client: %ui\n", clientSocket);
 			send(clientSocket, data, MESSAGE_SIZE, 0);
 		}
 	}
