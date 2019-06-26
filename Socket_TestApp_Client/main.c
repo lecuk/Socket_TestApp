@@ -3,6 +3,8 @@
 
 #define DEFAULT_PORT 9002
 #define MESSAGE_SIZE 256
+#define STATUS_SUCCESS 0
+#define STATUS_FAILED -1
 
 int main()
 {
@@ -21,21 +23,22 @@ int main()
 	serverAddress.sin_port = htons(DEFAULT_PORT);
 	serverAddress.sin_addr.S_un.S_addr = INADDR_ANY;
 
+	//djhaoseifda
 	//can't connect here, actually, idk what am i doing...
 	int connectStatus = connect(clientSocket, (struct sockaddr *)&serverAddress, sizeof(serverAddress));
-	if (connectStatus == -1)
+	if (connectStatus == STATUS_FAILED)
 	{
 		printf("Failed to connect to a server.\n");
 		getchar();
 		return -1;
 	}
-
+	//sefklrukgkse
 	char serverResponse[MESSAGE_SIZE] = "-";
 	
 	while (getchar() != 'q')
 	{
 		int receiveStatus = recv(clientSocket, serverResponse, MESSAGE_SIZE, 0);
-		if (receiveStatus) printf("Server response: %s\n", serverResponse);
+		if (receiveStatus != STATUS_FAILED) printf("Server response: %s\n", serverResponse);
 	}
 
 	closesocket(clientSocket);
