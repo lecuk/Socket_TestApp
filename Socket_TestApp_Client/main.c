@@ -21,6 +21,7 @@ int main()
 	serverAddress.sin_port = htons(DEFAULT_PORT);
 	serverAddress.sin_addr.S_un.S_addr = INADDR_ANY;
 
+	//djhaoseifda
 	//can't connect here, actually, idk what am i doing...
 	int connectStatus = connect(clientSocket, (struct sockaddr *)&serverAddress, sizeof(serverAddress));
 	if (connectStatus == STATUS_FAILED)
